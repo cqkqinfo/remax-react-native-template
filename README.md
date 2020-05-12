@@ -7,15 +7,13 @@
 安装依赖
 
 ```bash
-npm install
+yarn
 ```
 
 调试项目
 
 ```bash
 # 执行调试命令
-$ npm run dev
-or
 yarn dev
 ```
 
@@ -24,9 +22,6 @@ yarn dev
 ## 构建
 
 ```bash
-# 执行构建命令
-$ npm run build
-or
 $ yarn build
 ```
 

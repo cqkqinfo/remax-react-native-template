@@ -2,10 +2,14 @@
   "name": "create-parsec-app-weapp",
   "private": true,
   "version": "1.0.0",
-  "description": "Remax Project With TypeScript",
   "main": "index.js",
   "keywords": [],
-  "author": "mushan <mushan0x0@gmail.com>",
+  "author": "{{author}}",
+  "description": "{{description}}",
+  "repository": {
+    "type": "git",
+    "url": "{{git}}"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "remax build -t wechat -w",
