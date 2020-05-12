@@ -1,0 +1,58 @@
+{
+  "name": "create-parsec-app-weapp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Remax Project With TypeScript",
+  "main": "index.js",
+  "keywords": [],
+  "author": "mushan <mushan0x0@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -t wechat -w",
+    "debug": " REMAX_DEBUG=true yarn dev",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production remax build -t wechat"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "pretty-quick --staged"
+    ],
+    "*.{ts,tsx,js}": [
+      "eslint"
+    ]
+  },
+  "dependencies": {
+    "create-api-hooks": "^0.0.26",
+    "react": "^16.12.0",
+    "remax": "^2.0.3"
+  },
+  "devDependencies": {
+    "@remax/plugin-less": "^1.0.0",
+    "@types/qs": "^6.9.0",
+    "@types/react": "^16.9.16",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^4.5.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.7.2"
+  }
+}
