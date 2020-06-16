@@ -1046,17 +1046,17 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@remax/ali@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/ali/-/ali-2.0.4.tgz#d8ea5f3ed3e19b0bf6c2c3e509b5f9d192d3efb4"
-  integrity sha512-kMOemyu2altB/KaacbV+xA54rwURlM3moq6lW8DdKvAXUAGWGmYabyIWjp8Z/PBLOzjdisv1DIVgp12TFv8+xA==
+"@remax/ali@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/ali/-/ali-2.0.6.tgz#f76fd9eb97804f1082e66a7a7cc4da9137766df7"
+  integrity sha512-LnCzPc25ciU6XT5YhywfhcYgvCPa6rbIxBCgIOifFjK8spPTCAohjLqw0GXR/VzvfNlXiIwBXNfBZaAZqSfuDQ==
   dependencies:
     mini-types "^0.1.1"
 
-"@remax/cli@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/cli/-/cli-2.0.4.tgz#42482f3c03f33ada370a9eb37d818b8d6f99ac62"
-  integrity sha512-pNnpS3XhiPJh43PYG4Y7D9ute0oz6gxWJFKn0nK6BRqtX2/Axlg/uX0K7leA33LX/iIrw7u8GjUQL9nhV65Iqg==
+"@remax/cli@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/cli/-/cli-2.0.6.tgz#41c3ff94cb5c433c676b062fb4dd4126a786cd3f"
+  integrity sha512-nAt0q2ZY8c/QGV+iH4qVFCvLjBruf+kzI1xYSBWdFU0Dh9iI1fOLnZ8fGxWPXNAScYixeR6lcqhbizzWKCvVfg==
   dependencies:
     "@babel/core" "^7.7.4"
     "@babel/helper-module-imports" "^7.7.4"
@@ -1064,14 +1064,14 @@
     "@babel/preset-typescript" "^7.7.4"
     "@babel/register" "^7.7.0"
     "@babel/types" "^7.7.4"
-    "@remax/macro" "2.0.4"
+    "@remax/macro" "2.0.6"
     "@remax/postcss-px2units" "^0.2.0"
-    "@remax/postcss-tag" "2.0.4"
-    "@remax/types" "2.0.4"
+    "@remax/postcss-tag" "2.0.6"
+    "@remax/types" "2.0.6"
     "@types/webpackbar" "^4.0.0"
     address "^1.1.2"
     babel-loader "^8.1.0"
-    babel-preset-remax "2.0.4"
+    babel-preset-remax "2.0.6"
     chokidar "^3.4.0"
     clean-webpack-plugin "^3.0.0"
     copy-webpack-plugin "^5.1.1"
@@ -1107,23 +1107,24 @@
     webpackbar "^4.0.0"
     yargs "^15.1.0"
 
-"@remax/macro@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/macro/-/macro-2.0.4.tgz#3d0fb17c053bd6e2da56ecac11d83db82d21dcc0"
-  integrity sha512-d00FqqmWzGfSHEFcTyDZ9tB5C5nx5Fx1n2bJBzJtKtjtvgs6upCYnqaaZZjUTXbZJ1ihI5e4N7Et1ylH2QY44Q==
+"@remax/macro@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/macro/-/macro-2.0.6.tgz#70ee8c6714b9ddcc83a3bb4ed0b923f5e35e734c"
+  integrity sha512-NHSXbb/SsZhyPciTsS5LOifqZ5zz8X9yOI7jiVK5MSwoyRNiDOKKAtlR/7hXDOIgbFFJyy+k92bprsy1s2TlSQ==
   dependencies:
-    "@remax/types" "2.0.4"
+    "@remax/types" "2.0.6"
     "@types/babel__traverse" "^7.0.8"
+    slash2 "^2.0.0"
 
-"@remax/one@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/one/-/one-2.0.4.tgz#7db3274415146cc64af490e1888288b7188b6ebd"
-  integrity sha512-IqI9NOJmpMbDtXhxVpHsoJ3sO2bvL6SnPDPmVfpKGHOXZkeP0il19WpUgxEYljAEFk3u87BO7ergY+O2h1gIAw==
+"@remax/one@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/one/-/one-2.0.6.tgz#1e6a8c632ec190129769debeb6861c8031b1f78f"
+  integrity sha512-EmdMXBF0X34PGkeKwmtGFclgD1NWfrKdkuIThzoA8XghFqAILL9xRxJaSpJu+SdUWw5Q9PdmC43KtENA7El2vA==
   dependencies:
-    "@remax/ali" "2.0.4"
-    "@remax/router" "2.0.4"
-    "@remax/toutiao" "2.0.4"
-    "@remax/wechat" "2.0.4"
+    "@remax/ali" "2.0.6"
+    "@remax/router" "2.0.6"
+    "@remax/toutiao" "2.0.6"
+    "@remax/wechat" "2.0.6"
     clsx "^1.1.0"
     react-autosize-textarea "^7.0.0"
     react-lazyload "^2.6.7"
@@ -1144,59 +1145,64 @@
     object-assign "^4.1.1"
     postcss "^6.0.19"
 
-"@remax/postcss-tag@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/postcss-tag/-/postcss-tag-2.0.4.tgz#025b3ab64bb89afdf5e62eec90ece7b23b0f8997"
-  integrity sha512-O23KeLmK00EVF+sIpY43BZpyZICzTm9C6Pl1caInf5cC05YoatLvltZ19AKvFGDu9UjjOTeM2tAOK3tApInMhg==
+"@remax/postcss-tag@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/postcss-tag/-/postcss-tag-2.0.6.tgz#d2a5711b3b487acba62371cb736436073c4375c3"
+  integrity sha512-O6kH+BLtPiwrlB6wl5tazqDCC/BNwUvDYFWSXqK9imMDa/ehgwz3+PK9wF1dAkADFDNuzbsbZxeWID3kYi3sMg==
 
-"@remax/router@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/router/-/router-2.0.4.tgz#1c5681c99b350772a1d449df382da252fb3cdc8a"
-  integrity sha512-XqIJskkrk5C7IIAenqBRxb+LHSl/oheMwXn6JoKwNmv+UovCvn5nsdIj71Ot0Pe3bkpoeO+8fPqjlvdQV5AdDQ==
+"@remax/react-router-cache-route@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.npmjs.org/@remax/react-router-cache-route/-/react-router-cache-route-1.8.4.tgz#cf9ddad48b9ee5ef8439c705f2c865bd2c673543"
+  integrity sha512-W17U/5/y6ZjMdfVw400AY3hrBJCr6UC+f/6VUANU0O41pH68eGY0gwxRlR3aa6eQfT6ztMSfvLLPjzBAOjhoKg==
+
+"@remax/router@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/router/-/router-2.0.6.tgz#e77f3fe875060d82868ed0b233d6aeab2de58cf4"
+  integrity sha512-KzPQHib7GBnNZrMY/+ChhqEq+lk7K6qwOEDgXCmYWH+xxa6LOF1p1ehOQmKLix5HT5Q/6cYJJAIEUacgJTd47g==
   dependencies:
+    "@remax/react-router-cache-route" "^1.8.4"
     history "^4.10.1"
-    react-router-cache-route "^1.8.4"
     react-router-dom "^5.1.2"
 
-"@remax/runtime@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/runtime/-/runtime-2.0.4.tgz#9ede5b1eb25625308e28f0523cf4b697c7505c97"
-  integrity sha512-M+l5l6NTyI/FY9ODKtojFTx0F5e9j6QcpxPwpH2MoOFdo/JUZKzs6sp9l7cdyYAOEDRwHEerspInatbLKqNT+Q==
+"@remax/runtime@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/runtime/-/runtime-2.0.6.tgz#76721ed7cf7964459419fb254fd95129788d315e"
+  integrity sha512-vNqP8ocgRNn1JkignYuIqXs4fGgKmIjjWl8DGOtNtpDBRV34I6WHYC0SrZy/GFlEIchKabGYuLlL8skqg36q5g==
   dependencies:
-    "@remax/web" "2.0.4"
+    "@remax/web" "2.0.6"
     qs "^6.9.3"
     react-reconciler "0.25.1"
     scheduler "0.19.1"
 
-"@remax/toutiao@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/toutiao/-/toutiao-2.0.4.tgz#ec3728ece1ca90ccf14996007102c11287843e23"
-  integrity sha512-3ibof5eFLT/LSkTW0GKDTRmuYBzBh/jJhCeLYNdlYz88UW/AR7vxhNNB1S8QkWTgDbOlw6BlIq1FynyAtrrk8g==
+"@remax/toutiao@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/toutiao/-/toutiao-2.0.6.tgz#6570a5ffd51f3e9e8f89cb49f170efe1046e8541"
+  integrity sha512-yQcycQhwrvX+TvZqHQx+05EevWPIzZv7uvQqnkoKnHuupmAeToZgE6HGx3TOD0SzVAdontcMeLJX6mw1/YNSmA==
 
-"@remax/types@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/types/-/types-2.0.4.tgz#7e43e198f655395a412b5052deb3dde6493034bb"
-  integrity sha512-kByYx3VkS97PFv3A4E083cIFLj/+nSvkCCZ4126Czc3MmdUVini93n3DY1yFrFd3b+iC7nQHfKssVNHyDCdy7A==
+"@remax/types@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/types/-/types-2.0.6.tgz#9088af1e312f259dcfd78d81e97a1d811aa30d5d"
+  integrity sha512-yJ7WN1csIbvXDshirKTBq6XkH/jLwdmLHVRpTJpc2xfy+7lXMzNnLszktzJndqHW/ftUd6XrZk0Ol/rCaQZMsQ==
   dependencies:
     "@babel/types" "^7.8.0"
     "@types/webpack" "^4.41.10"
     "@types/yargs" "^15.0.0"
     webpack-chain "^6.4.0"
 
-"@remax/web@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/web/-/web-2.0.4.tgz#8d2c6c154dd951321e36d9bfda24a0b9cb0a0047"
-  integrity sha512-HJJMPCw5zHhK0Rmc0vUUB88vWkDFkBLPn62Ovulp/Q+X/vup7zX7XDCXElIFGvqwj+UG+ucYOr7aZX+xBlFKNQ==
+"@remax/web@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/web/-/web-2.0.6.tgz#2aa8a49ca9de676748bf9c5dfe5c25a149a59e27"
+  integrity sha512-u7p0MV9jz75uR5tm6F4sszxKu+k98ciV++CVA8EC2qRoglMOk42yjvvCo7yv7zqFdqMMsPscMgYtbM4U+eG9bQ==
   dependencies:
     "@loadable/component" "^5.12.0"
-    "@remax/router" "2.0.4"
+    "@remax/router" "2.0.6"
     rmc-pull-to-refresh "^1.0.12"
     umi-hd "^5.0.1"
 
-"@remax/wechat@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@remax/wechat/-/wechat-2.0.4.tgz#9b575a1b97efc810cd7e1b1f353d7176c9452ca2"
-  integrity sha512-KTUFub9NtUBoujyjI01xynxX7wJ7yh3ovpm4ikYim4sBWk1in9O6wTQVUzOCwSSmt/L81WqXCBSOUFQ3k6Tg5g==
+"@remax/wechat@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@remax/wechat/-/wechat-2.0.6.tgz#d074f4cbabe5b55f56a3d6d0e9c9e7f800441df1"
+  integrity sha512-+n5bUaoRCoE8WN6/YHqrpmzX7AktddnDaDGlOaYQeebGCTE0J8uQ88GuhZuxda88QOzRZ58ctGAm3L3yrRuDYg==
   dependencies:
     miniprogram-api-typings "^2.10.4"
 
@@ -2122,10 +2128,10 @@ babel-plugin-macros@^2.8.0:
     cosmiconfig "^6.0.0"
     resolve "^1.12.0"
 
-babel-preset-remax@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/babel-preset-remax/-/babel-preset-remax-2.0.4.tgz#f2e09bcf42944f8a9c8dbee138a6e347139e9122"
-  integrity sha512-Rtnpa4Ctqrq2vEh8mSzqgUxugsTdCBpJg7aNl/qR24STMt3343uKxEF4BnwonEGCi4y+6p0tJd5GBbtW3QTbkw==
+babel-preset-remax@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/babel-preset-remax/-/babel-preset-remax-2.0.6.tgz#12c8179662ffdbbf891aaf4fbce8e9d385f8151a"
+  integrity sha512-V+4uA/Sbuxxoqz0ZcZzYPOVe1cGxXMgUfFU+Vymd3aNiDfIgenS2l2N34IDm02ynhwhzXNum5bQIj6BSuDmuZw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.7.4"
@@ -7727,11 +7733,6 @@ react-reconciler@0.25.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-router-cache-route@^1.8.4:
-  version "1.8.4"
-  resolved "https://registry.npmjs.org/react-router-cache-route/-/react-router-cache-route-1.8.4.tgz#57523803f14edd1e04c2de951451d97c5d27c971"
-  integrity sha512-cj84gIDqQdNMMKVFD66V4Tc2FKEEq5DvARFpyEbrrBFWn54HsVkZxFRsjkgVZtTNiYqXSp7pP0N8tuoHEtUj6Q==
-
 react-router-dom@^5.1.2:
   version "5.1.2"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.1.2.tgz#06701b834352f44d37fbb6311f870f84c76b9c18"
@@ -7951,19 +7952,19 @@ remax-stats@^0.1.1:
   dependencies:
     is-git-repository "^1.1.1"
 
-remax@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/remax/-/remax-2.0.4.tgz#e3d8953f05e76c08c3d13140995aac3c862cebfd"
-  integrity sha512-MOG8brmZG/qzZK32UXifKnnqOx0G2+QUVnbrFyijPijKYlFvltwKKQIQfunSlR7x4T2zw1EjmI8yjbKnhXzD/w==
+remax@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/remax/-/remax-2.0.6.tgz#fb62f3f6f78d2da446a265318b566639681c1032"
+  integrity sha512-Az5/ph1SLgGDGDHEvPwe0Jb5PSaebRc+ss78hc7xuynQb6SgJpigs9fIOOHM/aYtnzuk6rWWlPSAQ07SiKAj5Q==
   dependencies:
-    "@remax/ali" "2.0.4"
-    "@remax/cli" "2.0.4"
-    "@remax/macro" "2.0.4"
-    "@remax/one" "2.0.4"
-    "@remax/runtime" "2.0.4"
-    "@remax/toutiao" "2.0.4"
-    "@remax/web" "2.0.4"
-    "@remax/wechat" "2.0.4"
+    "@remax/ali" "2.0.6"
+    "@remax/cli" "2.0.6"
+    "@remax/macro" "2.0.6"
+    "@remax/one" "2.0.6"
+    "@remax/runtime" "2.0.6"
+    "@remax/toutiao" "2.0.6"
+    "@remax/web" "2.0.6"
+    "@remax/wechat" "2.0.6"
     mini-types "^0.1.1"
     miniprogram-api-typings "^2.10.4"
 
