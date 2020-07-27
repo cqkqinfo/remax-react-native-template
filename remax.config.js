@@ -5,8 +5,10 @@ module.exports = {
   plugins: [less()],
   configWebpack({ config }) {
     // 详细配置参考 copy-webpack-plugin
-    config
-      .plugin('copy')
-      .use(CopyPlugin, [[{ from: 'src/images', to: 'images' }]]);
+    config.plugin('copy').use(CopyPlugin, [
+      {
+        patterns: [{ from: 'src/images', to: 'images' }]
+      }
+    ]);
   }
 };
