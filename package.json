@@ -16,11 +16,13 @@
     "debug": " REMAX_DEBUG=true yarn dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production remax build -t wechat"
+    "build": "cross-env NODE_ENV=production remax build -t wechat",
+    "check-for-dupes": "jscpd ./src -t 1"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn check-for-dupes",
       "commit-msg": "validate-commit-msg"
     }
   },
@@ -58,6 +60,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^3.1.0",
+    "jscpd": "^3.3.19",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
