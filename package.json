@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "remax build -t wechat -w",
+    "dev": "yarn check-for-dupes && remax build -t wechat -w",
     "debug": " REMAX_DEBUG=true yarn dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
