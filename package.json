@@ -16,7 +16,7 @@
     "debug": " REMAX_DEBUG=true yarn dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production remax build -t wechat",
+    "build": "yarn check-for-dupes && cross-env NODE_ENV=production remax build -t wechat",
     "check-for-dupes": "jscpd ./src -t 1"
   },
   "husky": {
