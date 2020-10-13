@@ -17,6 +17,8 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "yarn check-for-dupes && cross-env NODE_ENV=production remax build -t wechat",
+    "codegen": "yarn parsec-codegen",
+    "icon": "npx iconfont-remax",
     "check-for-dupes": "jscpd ./src -t 1"
   },
   "husky": {
@@ -35,11 +37,15 @@
     ]
   },
   "dependencies": {
+    "@remax/plugin-sass": "^1.0.0",
+    "@types/axios-curlirize": "^1.3.1",
+    "axios": "^0.20.0",
+    "axios-curlirize": "^1.3.7",
     "create-api-hooks": "^0.0.26",
     "dayjs": "^1.8.28",
     "parsec-hooks": "^0.0.64",
     "react": "^16.12.0",
-    "remax": "^2.5.3"
+    "remax": "^2.8.3"
   },
   "devDependencies": {
     "@remax/plugin-less": "^1.0.0",
@@ -62,6 +68,7 @@
     "husky": "^3.1.0",
     "jscpd": "^3.3.19",
     "lint-staged": "^9.5.0",
+    "parsec-codegen": "^0.0.0-alpha.6",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.7.2",

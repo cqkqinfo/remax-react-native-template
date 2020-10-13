@@ -12,6 +12,15 @@ module.exports = {
             .replace(/^\S/, s => s.toLowerCase())}Hooks`;
         }
       }
+    ],
+    [
+      'import',
+      {
+        libraryName: 'parsec-rc',
+        libraryDirectory: 'esm',
+        style: name => `${name}/style/index.scss`
+      },
+      'parsec-rc'
     ]
   ]
 };

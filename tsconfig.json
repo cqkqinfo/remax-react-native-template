@@ -8,10 +8,12 @@
     "jsx": "preserve",
     "rootDir": "src",
     "baseUrl": "./",
+    "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "*": ["./typings/*"]
     },
-    "lib": ["DOM"]
+    "lib": ["es2017", "dom", "esnext.array"]
   },
   "include": ["src/**/*", "typings/**/*"]
 }
