@@ -1,28 +1,33 @@
-# Remax Wechat With TypeScript
+# Remax One
 
-使用 Remax 开发微信小程序。
+使用 Remax 开发跨平台小程序。
 
 ## Getting Start
 
 安装依赖
 
 ```bash
-yarn
+npm install
 ```
 
 调试项目
 
 ```bash
-# 执行调试命令
-yarn dev
+# 选定要进行开发的平台，如 wechat，并调试
+$ npm run dev wechat
+or
+yarn dev wechat
 ```
 
-使用小程序开发者工具打开项目下的 `dist` 目录
+使用小程序开发者工具打开项目下的 `dist/[target]` 目录。
 
 ## 构建
 
 ```bash
-$ yarn build
+# 选定要构建的平台，如 wechat，并执行构建
+$ npm run build wechat
+or
+$ yarn build wechat
 ```
 
-使用小程序开发者工具打开项目下的 `dist` 目录，上传代码即可。
+使用小程序开发者工具打开项目下的 `dist/[target]` 目录，上传代码即可。

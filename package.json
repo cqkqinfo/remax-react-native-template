@@ -12,7 +12,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "yarn check-for-dupes && remax build -t wechat -w",
+    "dev": "yarn check-for-dupes && remax build -w -t",
+    "web": "yarn build web",
+    "wechat": "yarn build wechat",
     "debug": " REMAX_DEBUG=true yarn dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
@@ -43,9 +45,10 @@
     "axios-curlirize": "^1.3.7",
     "create-api-hooks": "^0.0.26",
     "dayjs": "^1.8.28",
-    "parsec-hooks": "^0.0.64",
+    "parsec-hooks": "^0.0.128",
+    "parsec-rc": "^0.0.0-alpha.49",
     "react": "^16.12.0",
-    "remax": "^2.8.3"
+    "remax": "^2.11.4"
   },
   "devDependencies": {
     "@remax/plugin-less": "^1.0.0",
@@ -69,6 +72,7 @@
     "jscpd": "^3.3.19",
     "lint-staged": "^9.5.0",
     "parsec-codegen": "^0.0.0-alpha.6",
+    "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.7.2",
