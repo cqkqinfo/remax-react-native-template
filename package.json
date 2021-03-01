@@ -45,7 +45,7 @@
     "axios-curlirize": "^1.3.7",
     "create-api-hooks": "^0.0.26",
     "dayjs": "^1.8.28",
-    "parsec-hooks": "^0.0.128",
+    "parsec-hooks": "^0.0.130",
     "parsec-rc": "^0.0.0-alpha.49",
     "react": "^16.12.0",
     "remax": "^2.11.4"
