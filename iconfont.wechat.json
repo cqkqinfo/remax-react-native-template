@@ -2,7 +2,7 @@
   "symbol_url": "https://at.alicdn.com/t/font_2126247_leb2g9p3nzf.js",
   "save_dir": "./src/components/iconfont",
   "use_typescript": true,
-  "platforms": ["wechat"],
+  "platforms": ["wechat", "alipay"],
   "use_rpx": false,
   "trim_icon_prefix": "icon",
   "default_icon_size": 18
