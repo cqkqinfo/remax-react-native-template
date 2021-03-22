@@ -20,7 +20,9 @@
     "prebuild": "npm run clean",
     "build": "yarn check-for-dupes && cross-env NODE_ENV=production remax build -t wechat",
     "codegen": "yarn parsec-codegen",
-    "icon": "npx iconfont-remax",
+    "icon": "npm run icon-h5&&npm run icon-wechat",
+    "icon-h5": "iconfont-h5",
+    "icon-wechat": "npx iconfont-remax --config iconfont.wechat.json",
     "check-for-dupes": "jscpd ./src -t 1"
   },
   "husky": {
@@ -75,6 +77,8 @@
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "react-iconfont-cli": "^2.0.1",
+    "remax-iconfont-cli": "^1.1.0",
     "typescript": "^3.7.2",
     "validate-commit-msg": "^2.14.0"
   }

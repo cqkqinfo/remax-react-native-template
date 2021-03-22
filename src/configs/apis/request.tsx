@@ -1,7 +1,7 @@
 import { request } from 'remax/wechat';
 
 type RequestOptions = WechatMiniprogram.RequestOption &
-  import('@remax/shared').PromisifyArgs<
+  import('@remax/framework-shared').PromisifyArgs<
     WechatMiniprogram.RequestSuccessCallbackResult,
     WechatMiniprogram.GeneralCallbackResult
   > & { headers?: any };
