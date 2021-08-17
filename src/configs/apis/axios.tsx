@@ -1,12 +1,10 @@
-import { AxiosRequestConfig } from 'axios';
 import storage from '@/utils/storage';
-import Request from './request';
-import { redirectTo, showToast } from 'remax/wechat';
+import { showToast, axios } from '@kqinfo/ui';
+import { redirectTo } from 'remax/one';
 import qs from 'qs';
-import curlirize from 'axios-curlirize';
 
-const { request, interceptors } = new Request({
-  baseUrl: ''
+const request = axios.create({
+  baseURL: ''
 });
 
 const cloneObjWithoutNull = (obj: Record<string, any>): Record<string, any> => {
@@ -29,46 +27,42 @@ const removeUselessParams = (url: string): string => {
   return `${data[0]}?${qs.stringify(res)}`;
 };
 
-interceptors.request.use(options => {
+request.interceptors.request.use(options => {
   if (storage.get('token')) {
-    options.header = {
-      ...(options.header || {}),
+    options.headers = {
+      ...(options.headers || {}),
       Authorization: `Bearer ${storage.get('token')}`
     };
   }
-  options.url = removeUselessParams(options.url);
+  options.url = removeUselessParams(options.url || '');
   if (options.data && typeof options.data === 'object') {
     options.data = cloneObjWithoutNull(options.data);
   }
   return options;
 });
 
-interceptors.response.use(options => {
-  if (options.statusCode >= 400) {
-    showToast({ title: options?.data?.message || '请求失败', icon: 'none' });
-    return Promise.reject(options);
-  }
-  if ([401, 403].includes(options.statusCode)) {
-    if (!storage.get('token')) {
-      redirectTo({ url: '/pages/login/doctor/index' });
+request.interceptors.response.use(
+  undefined,
+  (options: {
+    response: { data: any; status: number; config: { url: string } };
+  }) => {
+    const {
+      response: {
+        status,
+        data: { message }
+      }
+    } = options;
+    if (status >= 400) {
+      showToast({ title: message || '请求失败', icon: 'none' });
+      return Promise.reject(options);
     }
+    if ([401, 403].includes(status)) {
+      if (!storage.get('token')) {
+        redirectTo({ url: '/pages/login/doctor/index' });
+      }
+    }
+    return options;
   }
-  return options;
-});
+);
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-curlirize({ interceptors }, ({ command, object }) => {
-  // console.log(object.request);
-  // console.log('请复制以下curl =============');
-  // console.log(command);
-});
-
-export default {
-  request: ({ url = '', data, method }: AxiosRequestConfig) =>
-    request({
-      url,
-      data,
-      method: method as any
-    })
-};
+export default request;

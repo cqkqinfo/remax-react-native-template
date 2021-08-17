@@ -20,11 +20,10 @@ module.exports = {
     [
       'import',
       {
-        libraryName: 'parsec-rc',
-        libraryDirectory: 'esm',
-        style: name => `${name}/style/index.scss`
+        libraryName: '@kqinfo/ui',
+        libraryDirectory: 'es'
       },
-      'parsec-rc'
+      '@kqinfo/ui'
     ]
   ]
 };

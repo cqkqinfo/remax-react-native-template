@@ -1,13 +1,14 @@
 import { DefaultApi } from '../codegen';
-import { getWxEnv } from '@/utils/utils';
+import { getAccountInfoSync } from '@kqinfo/ui';
+import axios from './axios';
 
-//TODO 正式环境需要配置
 const baseUrl =
-  getWxEnv() === 'release'
-    ? 'https://www.yl958.cn/api'
-    : 'https://lyd.yl958.cn/api';
+  getAccountInfoSync().miniProgram.envVersion === 'release'
+    ? 'https://wx.cqkqinfo.com/anticovid'
+    : // : 'http://mock.anticovid.alpha.lyd.parsec.com.cn/wax-api';
+      'https://lye.parsec.com.cn/stage-anticovid-api';
 
-const apis = new DefaultApi(undefined, baseUrl);
+const apis = new DefaultApi(undefined, baseUrl, axios as any);
 
 Object.getOwnPropertyNames(Object.getPrototypeOf(apis)).forEach(name => {
   if (typeof (apis as any)[name] === 'function') {
