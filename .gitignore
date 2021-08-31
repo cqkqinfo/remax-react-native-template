@@ -81,3 +81,8 @@ tmp
 dist
 build
 out-tsc
+
+# CocoaPods
+/ios/Pods/
+sign.jks
+.yalc
