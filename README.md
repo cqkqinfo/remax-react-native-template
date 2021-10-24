@@ -1,6 +1,6 @@
 # Remax React Native
 
-使用 Remax 开发原生应用，支持 less module 和样式继承，不支持样式嵌套。
+使用 Remax 开发原生应用，支持 less module 和样式继承，不支持样式嵌套，可以搭配[凯桥全平台UI库](https://cqkqinfo.github.io/ui/)一起使用。
 
 ![image](https://kq-static.oss-cn-beijing.aliyuncs.com/ui/remax-rn-test.gif)
 
