@@ -1,9 +1,7 @@
 import { PropsWithChildren } from 'react';
 import './promise.prototype.finally.js';
-import { debug, Sentry } from '@kqinfo/ui';
+import { debug } from '@kqinfo/ui';
 import './app.less';
-
-Sentry.init();
 
 debug();
 
