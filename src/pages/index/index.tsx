@@ -32,8 +32,8 @@ export default () => (
     />
     <FormItem
       cell
-      label={'图标'}
-      onTap={() => navigateTo({ url: '/pages/icon/index' })}
+      label={'表格'}
+      onTap={() => navigateTo({ url: '/pages/table/index' })}
       after={<Icon name={'kq-right'} color={'#666'} />}
     />
     <FormItem

@@ -2,7 +2,7 @@ export default {
   pages: [
     'pages/index/index',
     'pages/form/index',
-    'pages/icon/index',
+    'pages/table/index',
     'pages/space/index',
     'pages/test/index'
   ],

@@ -33,9 +33,9 @@ const config: Config = {
       ...require('@/pages/form/index.config').default
     },
     {
-      component: require('@/pages/icon/index').default,
-      path: '/pages/icon/index',
-      ...require('@/pages/icon/index.config').default
+      component: require('@/pages/table/index').default,
+      path: '/pages/table/index',
+      ...require('@/pages/table/index.config').default
     },
     {
       component: require('@/pages/space/index').default,
