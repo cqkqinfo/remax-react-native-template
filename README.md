@@ -2,7 +2,7 @@
 
 使用 Remax 开发原生应用，支持 less module 和样式继承，不支持样式嵌套。
 
-<img src="https://kq-static.oss-cn-beijing.aliyuncs.com/ui/remax-rn-test.gif">
+![image](https://kq-static.oss-cn-beijing.aliyuncs.com/ui/remax-rn-test.gif)
 
 ## Getting Start
 
