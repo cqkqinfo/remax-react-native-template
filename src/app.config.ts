@@ -1,5 +1,11 @@
 export default {
-  pages: ['pages/index/index'],
+  pages: [
+    'pages/index/index',
+    'pages/form/index',
+    'pages/icon/index',
+    'pages/space/index',
+    'pages/test/index'
+  ],
   subpackages: [
     // {
     //   root: 'pages/step2/',
@@ -34,8 +40,8 @@ export default {
     }
   },
   window: {
-    defaultTitle: 'remax',
-    navigationBarTitleText: 'remax'
+    defaultTitle: '凯桥UI',
+    navigationBarTitleText: '凯桥UI'
     // navigationBarBackgroundColor: '#2780D9'
   }
 };

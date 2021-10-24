@@ -12,14 +12,15 @@
   },
   "license": "MIT",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator 'iPhone 12 Pro Max'",
+    "dev:android": "react-native run-android",
+    "dev:ios": "react-native run-ios --simulator 'iPhone 12 Pro Max'",
     "start": "react-native start",
     "dev": "yarn check-for-dupes && remax build -m -w -t",
     "dev:web": "yarn dev web",
     "dev:wechat": "yarn dev wechat",
     "build:web": "yarn build web",
     "build:wechat": "yarn build wechat",
+    "build:android": "cd android && ./gradlew assembleRelease",
     "debug": " REMAX_DEBUG=true yarn dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
@@ -28,7 +29,8 @@
     "icon": "npm run icon-h5&&npm run icon-wechat",
     "icon-h5": "iconfont-h5",
     "icon-wechat": "npx iconfont-remax --config iconfont.wechat.json",
-    "check-for-dupes": "jscpd ./src -t 1"
+    "postinstall": "patch-package",
+    "check-for-dupes": "jscpd ./src -t 10"
   },
   "husky": {
     "hooks": {
@@ -47,7 +49,7 @@
   },
   "dependencies": {
     "@ant-design/react-native": "^4.2.0",
-    "@kqinfo/ui": "^1.4.66",
+    "@kqinfo/ui": "^1.8.5",
     "@react-native-async-storage/async-storage": "^1.15.7",
     "@react-native-picker/picker": "^1.16.7",
     "@react-navigation/bottom-tabs": "5.x",
@@ -66,8 +68,9 @@
     "qs": "^6.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-native": "^0.65.1",
+    "react-native": "^0.66.1",
     "react-native-color-matrix-image-filters": "^5.2.10",
+    "react-native-drop-shadow": "^0.0.2",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-get-location": "^2.1.2",
     "react-native-image-crop-picker": "^0.36.2",
@@ -77,8 +80,9 @@
     "react-native-screens": "^3.6.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^12.1.1",
+    "react-native-web": "^0.17.5",
     "remax": "^2.15.4",
-    "remax-rn": "^1.0.3"
+    "remax-rn": "^1.0.4"
   },
   "devDependencies": {
     "@remax/plugin-less": "^1.0.0",
@@ -108,6 +112,7 @@
     "lint-staged": "^9.5.0",
     "metro-react-native-babel-transformer": "^0.66.2",
     "parsec-codegen": "^0.0.0-alpha.6",
+    "patch-package": "^6.4.7",
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",

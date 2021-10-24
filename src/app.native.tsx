@@ -5,11 +5,10 @@ import {
   useIsFocused
 } from '@react-navigation/native';
 import {
-  createStackNavigator,
-  StackScreenProps,
+  createNativeStackNavigator,
   useHeaderHeight
-} from '@react-navigation/stack';
-import appConfig from './app.config.rn';
+} from 'react-native-screens/native-stack';
+import appConfig from './app.config.native';
 import { StatusBar, Linking, Platform, Image, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getStorageSync, setStorageSync } from 'remax/wechat';
@@ -23,7 +22,8 @@ import { IImageInfo } from 'react-native-image-zoom-viewer/src/image-viewer.type
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { usePageEvent } from 'remax/macro';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { ConfigProvider } from '@kqinfo/ui';
+import { ConfigProvider, NeedWrap } from '@kqinfo/ui';
+import appData from '@/appData';
 
 const { window, tabBar } = appConfig;
 
@@ -37,15 +37,21 @@ const PageScroll = ({
   const isFocused = useIsFocused();
   const { scrollProps } = PageScrollStore.useContainer();
   return (
-    <KeyboardAwareScrollView
-      keyboardShouldPersistTaps={'always'}
-      keyboardDismissMode={'on-drag'}
-      {...scrollProps}>
-      {isFocused && (
-        <StatusBar backgroundColor={navigationBarBackgroundColor} />
-      )}
-      {children}
-    </KeyboardAwareScrollView>
+    <>
+      <NeedWrap
+        wrap={KeyboardAwareScrollView}
+        need={scrollProps.need !== false}
+        wrapProps={{
+          keyboardShouldPersistTaps: 'always',
+          keyboardDismissMode: 'on-drag',
+          ...scrollProps
+        }}>
+        {isFocused && (
+          <StatusBar backgroundColor={navigationBarBackgroundColor} />
+        )}
+        {children}
+      </NeedWrap>
+    </>
   );
 };
 
@@ -83,17 +89,8 @@ const getPage = (
   };
 };
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-export const appData = {
-  headerHeight: 0,
-  navigatorProps: {} as StackScreenProps<any, any>,
-  tabBarNavigatorProps: {} as StackScreenProps<any, any>,
-  setPreviewImages: {} as (imgs: IImageInfo[]) => void,
-  setPreviewImagesVisible: {} as (visible: boolean) => void,
-  setPreviewImagesCurrent: {} as (current: number) => void
-};
 
 const Tabs = (props: any) => {
   if (props) {
@@ -155,7 +152,7 @@ const getScreenOptions = ({
   backgroundColor?: string;
   backgroundTextStyle?: 'dark' | 'light';
 }) => ({
-  cardStyle: { backgroundColor: '#fff' },
+  contentStyle: { backgroundColor: 'white' },
   headerBackTitleVisible: false,
   headerBackImage: Platform.select({
     ios: () => (
@@ -177,7 +174,10 @@ const getScreenOptions = ({
     shadowOffset: {
       height: 0
     }
-  } as any,
+  },
+  headerHideShadow: true,
+  headerTopInsetEnabled: false,
+  headerTintColor: backgroundTextStyle === 'dark' ? '#fff' : '#000',
   headerTitleStyle: {
     color: backgroundTextStyle === 'dark' ? '#fff' : '#000',
     fontSize: 18
@@ -226,7 +226,7 @@ function App() {
     return null;
   }
   return (
-    <ConfigProvider.Provider>
+    <ConfigProvider>
       <SafeAreaProvider>
         <PortalProvider>
           <Modal visible={previewImagesVisible} transparent={true}>
@@ -281,7 +281,8 @@ function App() {
                       options={() =>
                         getScreenOptions({
                           backgroundColor: navigationBarBackgroundColor,
-                          title: navigationBarTitleText
+                          title: navigationBarTitleText,
+                          backgroundTextStyle
                         })
                       }>
                       {getPage(component, {
@@ -299,7 +300,7 @@ function App() {
           </NavigationContainer>
         </PortalProvider>
       </SafeAreaProvider>
-    </ConfigProvider.Provider>
+    </ConfigProvider>
   );
 }
 

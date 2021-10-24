@@ -2,12 +2,12 @@
  * @format
  */
 
+import './polyfills';
 import { AppRegistry } from 'react-native';
-import App from './src/app.rn';
-import { name as appName } from './app.json';
+import App from './src/app';
 import SplashScreen from 'react-native-splash-screen';
 
-AppRegistry.registerComponent(appName, () => {
+AppRegistry.registerComponent('rndemo', () => {
   SplashScreen.hide();
   return App;
 });

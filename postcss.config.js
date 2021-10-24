@@ -1,29 +1,19 @@
 // postcss.config.js
-if (process.env.REMAX_PLATFORM) {
-  module.exports = ({ options }) => {
-    const plugins = {};
-    Object.keys(options.plugins).forEach(i => {
-      if (!/postcss-px2units/.test(i)) {
-        plugins[i] = options.plugins[i];
-      }
-    });
-    return {
-      plugins: {
-        // 继承 remax 默认的插件配置
-        ...plugins,
-        'postcss-px-to-viewport': {
-          viewportWidth: 750,
-          exclude: /(antd-mobile)/
-        }
-      }
-    };
-  };
-} else {
-  module.exports = {
+module.exports = ({ options }) => {
+  const plugins = {};
+  Object.keys(options ? options.plugins : {}).forEach(i => {
+    if (!/postcss-px2units/.test(i)) {
+      plugins[i] = options.plugins[i];
+    }
+  });
+  return {
     plugins: {
+      // 继承 remax 默认的插件配置
+      ...plugins,
       'postcss-px-to-viewport': {
-        viewportWidth: 750
+        viewportWidth: 750,
+        exclude: /(antd-mobile)/
       }
     }
   };
-}
+};

@@ -3,7 +3,7 @@ import {
   getStorageSync,
   removeStorageSync,
   clearStorageSync
-} from 'remax/wechat';
+} from '@kqinfo/ui';
 
 type keys = 'token' | 'openId';
 
