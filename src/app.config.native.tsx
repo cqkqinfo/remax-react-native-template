@@ -46,6 +46,16 @@ const config: Config = {
       component: require('@/pages/test/index').default,
       path: '/pages/test/index',
       ...require('@/pages/test/index.config').default
+    },
+    {
+      component: require('@/pages/richText/index').default,
+      path: '/pages/richText/index'
+      // ...require('@/pages/richText/index.config').default
+    },
+    {
+      component: require('@/pages/webView/index').default,
+      path: '/pages/webView/index'
+      // ...require('@/pages/richText/index.config').default
     }
   ],
   tabBar: {

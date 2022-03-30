@@ -1,5 +1,13 @@
 import React from 'react';
-import { Icon, Space, FormItem, TabBar, Platform } from '@kqinfo/ui';
+import {
+  Icon,
+  Space,
+  FormItem,
+  TabBar,
+  Platform,
+  ListItem,
+  CommonImg
+} from '@kqinfo/ui';
 import { navigateTo } from 'remax/one';
 
 const tabData = [
@@ -48,9 +56,21 @@ export default () => (
       onTap={() => navigateTo({ url: '/pages/test/index' })}
       after={<Icon name={'kq-right'} color={'#666'} />}
     />
+    <FormItem
+      cell
+      label={'富文本'}
+      onTap={() => navigateTo({ url: '/pages/richText/index' })}
+      after={<Icon name={'kq-right'} color={'#666'} />}
+    />
+    <FormItem
+      cell
+      label={'网页视图'}
+      onTap={() => navigateTo({ url: '/pages/webView/index' })}
+      after={<Icon name={'kq-right'} color={'#666'} />}
+    />
     <Platform platform={['web']}>
       <Space flex={1} />
-      <TabBar items={tabData} />
+      {/*<TabBar items={tabData} />*/}
     </Platform>
   </Space>
 );

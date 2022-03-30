@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Space,
   Form,
@@ -6,12 +6,19 @@ import {
   Button,
   PartTitle,
   Icon,
-  addressOptions,
+  getAddressOptions,
   Picker
 } from '@kqinfo/ui';
+import { CascadePickerOption } from 'antd-mobile/es/components/cascade-picker/cascade-picker';
 
 const Demo = (props: any) => {
   const [form] = Form.useForm();
+  const [addressOptions, setAddressOptions] = useState<CascadePickerOption[]>(
+    []
+  );
+  useEffect(() => {
+    getAddressOptions().then(options => setAddressOptions(options));
+  }, []);
   return (
     <Space alignItems={'stretch'} vertical style={props.style}>
       <Form form={form} onFinish={console.log} {...props}>
@@ -42,7 +49,7 @@ const Demo = (props: any) => {
 
 export default () => {
   return (
-    <Space vertical size={10} alignItems={'stretch'}>
+    <Space vertical size={'10px'} alignItems={'stretch'}>
       <PartTitle>一般用法</PartTitle>
       <Demo />
       <PartTitle>cell模式</PartTitle>

@@ -86,3 +86,5 @@ out-tsc
 /ios/Pods/
 sign.jks
 .yalc
+.gradle
+vendor

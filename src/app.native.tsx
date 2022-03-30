@@ -4,16 +4,13 @@ import {
   getFocusedRouteNameFromRoute,
   useIsFocused
 } from '@react-navigation/native';
-import {
-  createNativeStackNavigator,
-  useHeaderHeight
-} from 'react-native-screens/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useHeaderHeight } from '@react-navigation/elements';
 import appConfig from './app.config.native';
 import { StatusBar, Linking, Platform, Image, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getStorageSync, setStorageSync } from 'remax/wechat';
 import styles from './app.less';
-import PageScrollStore from './PageScrollStore';
 import PortalProvider from 'parsec-hooks/lib/PortalProvider';
 import { Provider } from '@ant-design/react-native';
 import { Modal } from 'react-native';
@@ -22,7 +19,7 @@ import { IImageInfo } from 'react-native-image-zoom-viewer/src/image-viewer.type
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { usePageEvent } from 'remax/macro';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { ConfigProvider, NeedWrap } from '@kqinfo/ui';
+import { ConfigProvider } from '@kqinfo/ui';
 import appData from '@/appData';
 
 const { window, tabBar } = appConfig;
@@ -35,23 +32,15 @@ const PageScroll = ({
   navigationBarBackgroundColor?: string;
 }) => {
   const isFocused = useIsFocused();
-  const { scrollProps } = PageScrollStore.useContainer();
   return (
-    <>
-      <NeedWrap
-        wrap={KeyboardAwareScrollView}
-        need={scrollProps.need !== false}
-        wrapProps={{
-          keyboardShouldPersistTaps: 'always',
-          keyboardDismissMode: 'on-drag',
-          ...scrollProps
-        }}>
-        {isFocused && (
-          <StatusBar backgroundColor={navigationBarBackgroundColor} />
-        )}
-        {children}
-      </NeedWrap>
-    </>
+    <KeyboardAwareScrollView
+      keyboardShouldPersistTaps={'always'}
+      keyboardDismissMode={'on-drag'}>
+      {isFocused && (
+        <StatusBar backgroundColor={navigationBarBackgroundColor} />
+      )}
+      {children}
+    </KeyboardAwareScrollView>
   );
 };
 
@@ -68,7 +57,12 @@ const getPage = (
   return (props: any) => {
     appData.navigatorProps = props;
     appData.headerHeight = useHeaderHeight();
-    usePageEvent('onShow', () => StatusBar.setBarStyle(barStyle));
+    usePageEvent('onShow', () => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      global.window.location.href = props.route.name;
+      StatusBar.setBarStyle(barStyle);
+    });
     useEffect(() => {
       return props.navigation.addListener('focus', () => {
         appData.navigatorProps = props;
@@ -77,12 +71,10 @@ const getPage = (
     return (
       <Provider>
         <PortalProvider>
-          <PageScrollStore.Provider>
-            <PageScroll
-              navigationBarBackgroundColor={navigationBarBackgroundColor}>
-              <Component />
-            </PageScroll>
-          </PageScrollStore.Provider>
+          <PageScroll
+            navigationBarBackgroundColor={navigationBarBackgroundColor}>
+            <Component />
+          </PageScroll>
         </PortalProvider>
       </Provider>
     );
@@ -98,12 +90,10 @@ const Tabs = (props: any) => {
   }
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        labelStyle: {
-          fontSize: 13
-        }
-      }}
       screenOptions={({ route }) => ({
+        tabBarLabelStyle: {
+          fontSize: 13
+        },
         tabBarIcon: ({ focused }) => {
           const { iconPath, selectedIconPath } =
             tabBar.list.find(({ path }) => route.name === path) ||
@@ -127,7 +117,10 @@ const Tabs = (props: any) => {
           navigationBarBackgroundColor
         }) => {
           return (
-            <Tab.Screen key={path} name={path} options={{ title: text }}>
+            <Tab.Screen
+              key={path}
+              name={path}
+              options={{ title: text, headerShown: false }}>
               {getPage(component, {
                 navigationBarBackgroundColor,
                 barStyle:
@@ -167,14 +160,9 @@ const getScreenOptions = ({
     )
   }),
   headerStyle: {
-    backgroundColor: backgroundColor || window?.navigationBarBackgroundColor,
-    shadowRadius: 0,
-    elevation: 0,
-    shadowOpacity: 0,
-    shadowOffset: {
-      height: 0
-    }
+    backgroundColor: backgroundColor || window?.navigationBarBackgroundColor
   },
+  headerShadowVisible: false,
   headerHideShadow: true,
   headerTopInsetEnabled: false,
   headerTintColor: backgroundTextStyle === 'dark' ? '#fff' : '#000',

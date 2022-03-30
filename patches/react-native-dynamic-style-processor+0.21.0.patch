@@ -1,0 +1,21 @@
+diff --git a/node_modules/react-native-dynamic-style-processor/dist/index.js b/node_modules/react-native-dynamic-style-processor/dist/index.js
+index 5ce7ca2..cd26661 100644
+--- a/node_modules/react-native-dynamic-style-processor/dist/index.js
++++ b/node_modules/react-native-dynamic-style-processor/dist/index.js
+@@ -12,6 +12,7 @@ var _cssViewportUnitsTransform = require("css-viewport-units-transform");
+ var _reactNativeCssMediaQueryProcessor = require("react-native-css-media-query-processor");
+ 
+ var _microMemoize = require("micro-memoize");
++var appData = require("@/appData").default;
+ 
+ var _microMemoize2 = _interopRequireDefault(_microMemoize);
+ 
+@@ -55,7 +56,7 @@ function getMatchObject() {
+   var win = _reactNative.Dimensions.get("window");
+   return {
+     width: win.width,
+-    height: win.height,
++    height: win.height - appData.headerHeight - _reactNative.StatusBar.currentHeight,
+     orientation: win.width > win.height ? "landscape" : "portrait",
+     "aspect-ratio": win.width / win.height,
+     type: "screen"
