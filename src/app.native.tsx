@@ -245,8 +245,9 @@ function App() {
                     backgroundTextStyle,
                     navigationBarTitleText
                   } =
-                    tabBar.list.find(({ path }) => path === pagePath) ||
-                    tabBar.list[0];
+                    tabBar?.list?.find(({ path }) => path === pagePath) ||
+                    tabBar?.list?.[0] ||
+                    {};
                   return getScreenOptions({
                     title: navigationBarTitleText || text,
                     backgroundColor: navigationBarBackgroundColor,

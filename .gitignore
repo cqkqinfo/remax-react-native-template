@@ -88,3 +88,4 @@ sign.jks
 .yalc
 .gradle
 vendor
+local.properties
