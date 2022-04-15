@@ -1,6 +1,6 @@
 # Remax React Native
 
-使用 Remax 开发原生应用，支持直接使用remax里的跨平台方法、生命周期、less module 和样式继承，去掉了很多RN的使用限制，不支持样式嵌套，可以搭配[凯桥全平台 UI 库](https://cqkqinfo.github.io/ui/)一起使用。
+使用 Remax 开发原生应用，支持直接使用 remax 里的跨平台方法、生命周期、less module 和样式继承，去掉了很多 RN 的使用限制，不支持样式嵌套，可以搭配[凯桥全平台 UI 库](https://cqkqinfo.github.io/ui/)一起使用。
 
 ![image](https://kq-static.oss-cn-beijing.aliyuncs.com/ui/remax-rn-test.gif)
 
@@ -10,6 +10,8 @@
 
 ```bash
 yarn
+
+cd ios && pod install
 ```
 
 调试项目
