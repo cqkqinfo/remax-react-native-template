@@ -18,9 +18,21 @@ const postCSSTransformer = require('react-native-postcss-transformer');
 
 module.exports.transform = function({ src, filename, options }) {
   if (filename.endsWith('.less')) {
-    return lessTransformer.renderToCSS({ src, filename, options }).then(css => {
-      return postCSSTransformer.transform({ src: css, filename, options });
+    const opts = Object.assign(options, {
+      lessOptions: {
+        // modifyVars: { '@brand-primary': '#00AFCC' },
+        javascriptEnabled: true
+      }
     });
+    return lessTransformer
+      .renderToCSS({ src, filename, options: opts })
+      .then(css => {
+        return postCSSTransformer.transform({
+          src: css,
+          filename,
+          options
+        });
+      });
   } else {
     return upstreamTransformer.transform({ src, filename, options });
   }
