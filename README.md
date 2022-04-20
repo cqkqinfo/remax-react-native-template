@@ -6,22 +6,28 @@
 
 ## Getting Start
 
+开发前需要[配置 ReactNative 环境](https://www.react-native.cn/docs/environment-setup)
+
 安装依赖
 
 ```bash
 yarn
-
+# 如果需要开发iOS平台
 cd ios && pod install
 ```
 
-调试项目
+运行项目
 
 ```bash
-# 选定要进行开发的平台，如 ios，并调试
-yarn dev:ios
+# 选定要进行开发的平台，如 android，并调试
+yarn dev:android
 ```
 
-使用小程序开发者工具打开项目下的 `dist/[target]` 目录。
+小程序开发者工具打开项目下的 `dist/[target]` 目录。
+
+android 如需开发原生代码：android studio 打开 `android` 目录。
+
+iOS 如需开发原生代码：xcode 打开 `ios` 目录。
 
 ## 构建
 
