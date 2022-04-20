@@ -11,6 +11,7 @@
 安装依赖
 
 ```bash
+# 执行下面命令装包，没有yarn的话需要先安装 https://yarn.bootcss.com/
 yarn
 # 如果需要开发iOS平台
 cd ios && pod install
