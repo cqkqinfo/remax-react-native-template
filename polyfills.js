@@ -3,6 +3,7 @@
 // console.log(global.requestAnimationFrame);
 import { StyleSheet } from 'react-native';
 import { rpxToPx } from '@kqinfo/ui';
+import 'localstorage-polyfill';
 
 global.navigator = { userAgent: '' };
 global.window = {

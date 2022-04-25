@@ -1,32 +1,13 @@
-import {
-  setStorageSync,
-  getStorageSync,
-  removeStorageSync,
-  clearStorageSync
-} from '@kqinfo/ui';
+import { storage } from '@kqinfo/ui';
 
-type keys = 'token' | 'openId';
-
-interface Storage {
-  get: {
-    (key: keys | string): string | null;
-  };
-  set: {
-    (key: keys | string, value: string): void;
-  };
-  del: {
-    (key: keys): void;
-  };
-  clear: () => void;
-}
-
-const storage: Storage = {
-  get: key => getStorageSync(key),
-  set: (key, value: string) => {
-    setStorageSync(key, value);
-  },
-  del: key => removeStorageSync(key),
-  clear: () => clearStorageSync()
+/** 其中键为key类型，值为data的类型 */
+type DataType = {
+  token: string;
 };
 
-export default storage;
+export default storage.create<DataType>({
+  //格式化key值，如原始key为 name, 实际存储值为before-name-after
+  formatKey: v => `before-${v}-after`,
+  //异常处理器
+  errorHandler: err => console.log(err)
+});
