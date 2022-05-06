@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@ant-design/react-native": "^4.2.0",
-    "@kqinfo/ui": "^1.10.10",
+    "@kqinfo/ui": "^1.10.51",
     "@react-native-async-storage/async-storage": "^1.15.7",
     "@react-native-clipboard/clipboard": "^1.8.5",
     "@react-native-picker/picker": "^1.16.7",
@@ -66,12 +66,12 @@
     "create-api-hooks": "^0.0.26",
     "dayjs": "^1.8.28",
     "gcoord": "^0.3.2",
+    "localstorage-polyfill": "^1.0.1",
     "parsec-hooks": "^0.0.157",
     "qs": "^6.10.1",
-    "react": "^17.0.2",
-    "localstorage-polyfill": "^1.0.1",
+    "react": "18.0.0",
     "react-dom": "^17.0.2",
-    "react-native": "^0.68.1",
+    "react-native": "0.69.0-rc.0",
     "react-native-color-matrix-image-filters": "^5.2.10",
     "react-native-drop-shadow": "^0.0.4",
     "react-native-gesture-handler": "^1.10.3",
@@ -86,7 +86,7 @@
     "react-native-web": "^0.17.5",
     "react-native-webview": "^11.18.0",
     "remax": "^2.15.4",
-    "remax-rn": "^1.0.8"
+    "remax-rn": "^1.0.10"
   },
   "devDependencies": {
     "@remax/plugin-less": "^1.0.0",
